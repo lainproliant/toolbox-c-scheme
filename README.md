@@ -74,7 +74,7 @@ toolbox-test
 ------------
 This module offers a very simple unit testing framework.
 
-### *exn-rethrow*
+### \*exn-rethrow\*
 Determines if exceptions thrown by unit tests are passed up to
 the caller of `test-suite`.  False by default, can be overridden
 by setting the environment variable `TOOLBOX_EXN_RETHROW` to `1`.
