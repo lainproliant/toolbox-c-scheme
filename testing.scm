@@ -5,11 +5,22 @@
 ; Date: Monday May 9 2016
 ;--------------------------------------------------------------------
 
+(include "util.scm")
+
 (module toolbox-test (test-suite *exn-rethrow*)
-  (import chicken scheme extras)
+  (import chicken scheme extras toolbox-util)
   (use srfi-1 srfi-18)
 
-  (define *exn-rethrow* (make-parameter #f))
+  ;; A parameter which determines if exceptions raised by unit
+  ;; tests should be raised outside of the 'test-suite' function.
+  ;; It is false by default, meaning that exceptions raised
+  ;; will simply fail tests.
+  ;;
+  ;; The value of this parameter can also be set by specifying
+  ;; the 'TOOLBOX_EXN_RETHROW=1' environment variable prior to
+  ;; execution.
+  (define *exn-rethrow* (make-parameter
+                         (equal? (getenv "TOOLBOX_EXN_RETHROW") "1")))
 
   ;; Execute a test, catching any exceptions thrown from it
   ;; Returns true if the test completes successfully,
@@ -33,6 +44,9 @@
 
   ;; Executes the given set of lambdas as a test suite
   ;; and prints the results to standard out.
+  ;; Each lambda should be 0-arity and need not return
+  ;; a specific value.  In order for the test to fail it
+  ;; must raise an error.
   (define (test-suite name . tests)
           (let* ([total (length tests)]
                  [pass (fold test-fold 0 tests)]

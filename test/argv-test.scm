@@ -3,8 +3,6 @@
 (import (prefix toolbox-argv toolbox:))
 (import (prefix toolbox-test toolbox:))
 
-(toolbox:*exn-rethrow* #t)
-
 (define (create-subcom)
   (toolbox:subcommands
     (["hello" (lambda (argv) (print "Hello there!"))]
