@@ -1,18 +1,18 @@
 (include "toolbox-scheme.scm")
 
-(import (prefix lain-argv lain:))
-(import (prefix lain-test lain:))
+(import (prefix toolbox-argv toolbox:))
+(import (prefix toolbox-test toolbox:))
 
-(lain:*exn-rethrow* #t)
+(toolbox:*exn-rethrow* #t)
 
 (define (create-subcom)
-  (lain:subcommands
+  (toolbox:subcommands
     (["hello" (lambda (argv) (print "Hello there!"))]
      ["goodbye" (lambda (argv) (print "Goodbye there!"))])))
 
-(lain:test-suite 'argv-tests
+(toolbox:test-suite 'argv-tests
   (lambda ()
     (let ([subcom (create-subcom)])
-      (lain:subcom-invoke subcom '("hello" "world"))
-      (lain:subcom-invoke subcom '("goodbye" "world")))))
+      (toolbox:subcom-invoke subcom '("hello" "world"))
+      (toolbox:subcom-invoke subcom '("goodbye" "world")))))
 

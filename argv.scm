@@ -8,8 +8,8 @@
 
 (include "util.scm")
 
-(module lain-argv (subcommands subcom-create subcom-invoke)
-  (import chicken scheme lain-util)
+(module toolbox-argv (subcommands subcom-create subcom-invoke)
+  (import chicken scheme toolbox-util)
   (use srfi-18 srfi-69)
 
   (define-record subcom map default)

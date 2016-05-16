@@ -3,6 +3,6 @@
 ;--------------------------------------------------------------------
 
 (include "argv.scm")
-(include "test.scm")
+(include "testing.scm")
 (include "util.scm")
 

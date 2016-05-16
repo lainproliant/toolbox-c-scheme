@@ -5,7 +5,7 @@
 ; Date: Monday May 9 2016
 ;--------------------------------------------------------------------
 
-(module lain-test (test-suite *exn-rethrow*)
+(module toolbox-test (test-suite *exn-rethrow*)
   (import chicken scheme extras)
   (use srfi-1 srfi-18)
 

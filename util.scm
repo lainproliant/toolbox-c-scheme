@@ -5,7 +5,7 @@
 ; Date: Monday May 9 2016
 ;--------------------------------------------------------------------
 
-(module lain-util (empty? first first-or)
+(module toolbox-util (empty? first first-or)
   (import chicken scheme)
 
   ;; Determine if the given list is empty.
