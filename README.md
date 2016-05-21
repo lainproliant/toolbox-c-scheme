@@ -7,6 +7,17 @@ This library will grow as my experience with practical Scheme programming progre
 
 See the 'Index' section below for a list of all functions and macros provided and a brief explanation.  Please refer to the documentation in the source for further reference.
 
+Installation
+------------
+
+Before using this toolbox, you should run `make deps` to install the eggs that it depends on:
+
+```sh
+$ make deps
+```
+
+This installs any eggs that the toolbox actually depends on, plus other useful eggs.
+
 Usage
 -----
 
